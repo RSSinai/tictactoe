@@ -69,23 +69,13 @@ const Tictac = () => {
       <PageContainer>
         <Title ref={titleRef}>Tic tac toe</Title>
         <Board>
-          <div>
-            {[0, 1, 2].map((index) => {
-              return (
-                <Container
-                  ref={box_array[index]}
-                  onClick={(e) => {
-                    toggle(e, index);
-                  }}
-                />
-              );
-            })}
-          </div>
-          <div>
-            <div>
-              {[3, 4, 5].map((index) => {
+          {[0, 1, 2].map((row) => (
+            <div key={`row-${row}`}>
+              {[0, 1, 2].map((col) => {
+                const index = row * 3 + col;
                 return (
                   <Container
+                    key={`container-${index}`}
                     ref={box_array[index]}
                     onClick={(e) => {
                       toggle(e, index);
@@ -94,21 +84,7 @@ const Tictac = () => {
                 );
               })}
             </div>
-          </div>
-          <div>
-            <div>
-              {[6, 7, 8].map((index) => {
-                return (
-                  <Container
-                    ref={box_array[index]}
-                    onClick={(e) => {
-                      toggle(e, index);
-                    }}
-                  />
-                );
-              })}
-            </div>
-          </div>
+          ))}
         </Board>
         <Button onClick={reset}>Reset</Button>
       </PageContainer>

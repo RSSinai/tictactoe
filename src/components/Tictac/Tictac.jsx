@@ -104,13 +104,7 @@ const Tictac = () => {
             </div>
           </div>
         </Board>
-        <Button
-          onClick={() => {
-            reset();
-          }}
-        >
-          Reset
-        </Button>
+        <Button onClick={reset}>Reset</Button>
       </PageContainer>
     </div>
   );

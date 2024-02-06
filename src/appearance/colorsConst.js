@@ -1,1 +1,3 @@
-export const containerColor = "#3498db";
+export const colors = {
+  sqaureContainer: "#3498db",
+};

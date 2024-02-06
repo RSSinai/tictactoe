@@ -17,6 +17,9 @@ const Tictac = () => {
     if (lock) {
       return 0;
     }
+    if (data[num] != "") {
+      return;
+    }
     if (counter % 2 === 0) {
       e.target.innerHTML = `<img src='${cross_icon}'>`;
       data[num] = "x";
@@ -45,6 +48,9 @@ const Tictac = () => {
   const won = (winner) => {
     setLock(true);
     if (winner === "x") {
+      titleRef.current.innerText = "Congrats!";
+    }
+    if (winner === "o") {
       titleRef.current.innerText = "Congrats!";
     }
   };
